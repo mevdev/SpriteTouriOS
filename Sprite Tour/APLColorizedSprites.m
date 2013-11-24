@@ -65,7 +65,7 @@
 
     // Allocate a single sprite and copy it to make the other sprites.
     SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithImageNamed:@"rocket.png"];
-    [sprite setScale:0.5];
+    [sprite setScale:0.3];
     self.spriteTemplate = sprite;
     
     [self addBlendFactorLabels];
@@ -75,8 +75,7 @@
     [self addColorRow: [SKColor greenColor] forRow: 1];
     [self addColorRow: [SKColor blueColor] forRow: 2];
     [self addColorRow: [SKColor yellowColor] forRow: 3];
-    
-    [self addAnimatedSprite];
+
 }
 
 
@@ -91,16 +90,15 @@
     descriptionLabel.text = NSLocalizedString(@"Color blend factor:", @"");
     descriptionLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     descriptionLabel.position = CGPointMake(80,
-                                            CGRectGetMaxY(self.frame)-70);
+                                            CGRectGetMaxY(self.frame)-82);
     [self addChild:descriptionLabel];
     
-    for (int i = 0; i <= 10; i++)
+    for (int i = 0; i <= 3; i++)
     {
         SKLabelNode *numberLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-        numberLabel.text = [NSString localizedStringWithFormat:@"%4.2f",(float)i/10.0];
+        numberLabel.text = [NSString localizedStringWithFormat:@"%4.2f",(float)i/4.0];
         numberLabel.fontSize = 18;
-        numberLabel.position = CGPointMake(100 + i * (self.spriteTemplate.size.width + 10),
-                                           CGRectGetMaxY(self.frame)-90);
+        numberLabel.position = CGPointMake(100 + i * (self.spriteTemplate.size.width + 12),CGRectGetMaxY(self.frame)-105);
         
         [self addChild:numberLabel];
     }
@@ -112,70 +110,26 @@
     /*
         Adds a row of sprites to the scene, showing how a sprite is affected by the blended color.
      */
-    for (int i = 0; i <= 10; i++)
+    for (int i = 0; i <= 3; i++)
     {
         SKSpriteNode *s = [self.spriteTemplate copy];
         s.color = color;
-        s.colorBlendFactor = 0.1 * (float) i;
-        s.position = CGPointMake(100 + i * (self.spriteTemplate.size.width + 10),
-                                 100 + row * (self.spriteTemplate.size.height + 10)
+        s.colorBlendFactor = 0.25 * (float) i;
+        s.position = CGPointMake(100 + i * (self.spriteTemplate.size.width+ 18),
+                                57 + row * (self.spriteTemplate.size.height)
                                  );
                                  
         [self addChild:s];
     }
     
     // And a simple color node to show the actual blend color.
-    SKSpriteNode *colorSwash = [SKSpriteNode spriteNodeWithColor:color size:CGSizeMake(64,64)];
-    colorSwash.position = CGPointMake(100 + 12 * (self.spriteTemplate.size.width + 10),
-                                      100 + row * (self.spriteTemplate.size.height + 10)
+    SKSpriteNode *colorSwash = [SKSpriteNode spriteNodeWithColor:color size:CGSizeMake(50,20)];
+    colorSwash.position = CGPointMake(100 * (self.spriteTemplate.size.width),
+                                      100 + row * (self.spriteTemplate.size.height)
                                       );
     
     [self addChild:colorSwash];
 }
 
-
-- (void) addAnimatedSprite
-{
-    /*
-     Adds a sprite to the scene, and animates its blend color.
-     */
-    SKSpriteNode *animatedSprite = [self.spriteTemplate copy];
-    animatedSprite.position = CGPointMake(925,384);
-    [self addChild:animatedSprite];
-
-    [animatedSprite runAction:[self newAnimateColorsAction]];
-
-    // Label the sprite.
-    // Normally, this would be attached to the sprite. But in this scene, the sprite is scaled
-    // to 50%, so the label would be too. So instead, the sprite's position is calculated in the
-    // scene and placed there.
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    myLabel.text = NSLocalizedString(@"Animated Color Blending", @"");
-    myLabel.fontSize = 14;
-    myLabel.position = CGPointMake(animatedSprite.position.x, animatedSprite.position.y - 90);
-    [self addChild:myLabel];
-}
-
-
-- (SKAction*) newAnimateColorsAction
-{
-    /*
-     Creates and returns an action sequence that animates a sprite's blend color.
-     */
-    SKAction* sequence = [SKAction sequence:@[
-          [SKAction waitForDuration:1.0],
-          [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:1.0 duration:1.0],
-          [SKAction waitForDuration:1.0],
-          [SKAction colorizeWithColor:[SKColor greenColor] colorBlendFactor:1.0 duration:1.0],
-          [SKAction waitForDuration:1.0],
-          [SKAction colorizeWithColor:[SKColor blueColor] colorBlendFactor:1.0 duration:1.0],
-          [SKAction waitForDuration:1.0],
-          [SKAction colorizeWithColor:[SKColor yellowColor] colorBlendFactor:1.0 duration:1.0],
-          [SKAction waitForDuration:1.0],
-          [SKAction colorizeWithColorBlendFactor:0.0 duration:1.0]
-                         ]];
-    
-    return [SKAction repeatActionForever:sequence];
-}
 
 @end

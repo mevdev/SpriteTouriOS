@@ -70,8 +70,9 @@
      */
     SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithImageNamed:@"rocket.png"];
     
-    sprite.position = CGPointMake(CGRectGetMidX(self.frame)-200,
-                                   CGRectGetMidY(self.frame));
+        sprite.position = CGPointMake(CGRectGetMidX(self.frame)-80,
+                                      CGRectGetMidY(self.frame));
+    
     [self addChild:sprite];
     
     [self addDescription: NSLocalizedString(@"Texture Sprite", @"") toSprite:sprite];
@@ -85,8 +86,9 @@
      */
     SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithColor:[SKColor redColor] size:CGSizeMake(128,128)];
     
-    sprite.position = CGPointMake(CGRectGetMidX(self.frame)+200,
-                                  CGRectGetMidY(self.frame));
+    sprite.position = CGPointMake(CGRectGetMidX(self.frame)+80,
+                                          CGRectGetMidY(self.frame));
+
     [self addChild:sprite];
     
     [self addDescription: NSLocalizedString(@"Color Sprite", @"") toSprite:sprite];

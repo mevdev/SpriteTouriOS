@@ -47,7 +47,6 @@
  
  */
 
-#import <Cocoa/Cocoa.h>
 #import <SpriteKit/SpriteKit.h>
 #import "APLCommonScene.h"
 

@@ -71,13 +71,13 @@
     SKAction *resizeSpritesAction = [self newResizeSpriteAction:texture];
     
     SKSpriteNode *defaultSprite = [[SKSpriteNode alloc] initWithTexture:texture];
-    defaultSprite.position = CGPointMake(CGRectGetMidX(self.frame)-192, CGRectGetMidY(self.frame));
+    defaultSprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-125);
     [self addChild:defaultSprite];
     [defaultSprite runAction: resizeSpritesAction];
     [self addDescription:NSLocalizedString(@"Resized with default stretching", @"") toSprite:defaultSprite];
     
     SKSpriteNode *customSprite = [[SKSpriteNode alloc] initWithTexture:texture];
-    customSprite.position = CGPointMake(CGRectGetMidX(self.frame)+192,CGRectGetMidY(self.frame));
+    customSprite.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)+70);
     // the center rect calculation is always based on the artwork. In this case
     // the artwork is a 28 x 28 pixel image with a 4 x 4 pixel stretchable center.
     customSprite.centerRect = CGRectMake(12.0/28.0,12.0/28.0,4.0/28.0,4.0/28.0);
@@ -111,7 +111,7 @@
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
     myLabel.text = description;
     myLabel.fontSize = 18;
-    myLabel.position = CGPointMake(0,-128);
+    myLabel.position = CGPointMake(0,0); //-128
     [sprite addChild:myLabel];
 }
 

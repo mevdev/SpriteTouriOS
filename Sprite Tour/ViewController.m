@@ -7,25 +7,66 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
 
 @implementation ViewController
+
+@synthesize indexSelected,skView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
+}
+-(void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    skView.showsDrawCount = YES;
     
-    // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    ///Here do it, here!
+    CGSize size = skView.bounds.size; //only size we got?
+    //Doesn't seem to work perfectly when we switch to landscape.
+    SKScene *scene;
     
-    // Present the scene.
-    [skView presentScene:scene];
+    switch (indexSelected) {
+        case 0:
+            scene = [APLBasicSprites sceneWithSize:size];
+            break;
+            
+        case 1:
+            scene = [APLColorizedSprites sceneWithSize:size];
+            break;
+            
+        case 2:
+            scene = [ColorizedAnimatingSprite sceneWithSize:size];
+            break;
+
+            
+        case 3:
+            scene = [APLResizingSprites sceneWithSize:size];
+            break;
+            
+        case 4:
+            scene = [APLSpriteAnchors sceneWithSize:size];
+            break;
+            
+        case 5:
+            scene = [APLBlendingSprites sceneWithSize:size];
+            break;
+            
+        case 6:
+            scene = [APLAnimatingSprites sceneWithSize:size];
+            break;
+            
+        default:
+            break;
+    }
+    
+    /* Set the scale mode to scale to fit the window */
+    scene.scaleMode = SKSceneScaleModeAspectFit; //
+    [self.skView presentScene:scene];
+    
 }
 
 - (BOOL)shouldAutorotate

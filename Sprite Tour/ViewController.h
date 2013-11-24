@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "APLCommonScene.h"
+#import "APLBasicSprites.h"
+#import "APLColorizedSprites.h"
+#import "APLResizingSprites.h"
+#import "APLSpriteAnchors.h"
+#import "APLBlendingSprites.h"
+#import "APLAnimatingSprites.h"
+#import "ColorizedAnimatingSprite.h"
+
 
 @interface ViewController : UIViewController
+
+@property (nonatomic, assign) int indexSelected;
+@property (weak) IBOutlet SKView *skView;
 
 @end

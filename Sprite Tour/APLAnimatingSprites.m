@@ -101,7 +101,7 @@ const float showCharacterFramesOverOneSecond = 1.0f/(float) kDefaultNumberOfWalk
      Add a simple label that describes the scene.
      */
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    myLabel.text = NSLocalizedString(@"This sprite is animating through a series of texture images.", @"");
+    myLabel.text = NSLocalizedString(@"Animating through a series of images.", @"");
     myLabel.fontSize = 18;
     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),100);
     [self addChild:myLabel];
