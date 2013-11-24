@@ -45,6 +45,8 @@
  
  Copyright (C) 2013 Apple Inc. All Rights Reserved.
  
+ mod: Robert Linnemann
+ 
  */
 
 #import "APLSpriteAnchors.h"
@@ -73,10 +75,10 @@
         for (int y = 0; y<= 4; y++)
         {
             SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"rocket.png"];
-            [sprite setScale: 0.25];
+            [sprite setScale: 0.15];
             sprite.anchorPoint = CGPointMake(0.25*x, 0.25*y);
-            sprite.position = CGPointMake(CGRectGetMidX(self.frame)-400+100*x,
-                                        CGRectGetMidY(self.frame)-200+100*y);
+            sprite.position = CGPointMake(CGRectGetMidX(self.frame)-110+24*x,
+                                        CGRectGetMidY(self.frame)-55+50*y);
             [self addChild:sprite];
             [self addAnchorDotToSprite: sprite];
         }
@@ -89,8 +91,8 @@
      Creates a sprite and animates its anchor point.
      */
     SKSpriteNode *animatedSprite= [SKSpriteNode spriteNodeWithImageNamed:@"rocket.png"];
-    
-    animatedSprite.position = CGPointMake(CGRectGetMidX(self.frame)+200,
+    [animatedSprite setScale:0.5];
+    animatedSprite.position = CGPointMake(CGRectGetMidX(self.frame)+80,
                                         CGRectGetMidY(self.frame));
     animatedSprite.anchorPoint = CGPointZero;
     [self addChild:animatedSprite];
@@ -105,7 +107,7 @@
     SKShapeNode *dot = [[SKShapeNode alloc] init];
 
     CGMutablePathRef myPath = CGPathCreateMutable();
-    CGPathAddArc(myPath, NULL, 0, 0, 3, 0, M_2_PI, YES);
+    CGPathAddArc(myPath, NULL, 0, 0, 10, 0, M_2_PI, YES);
     CGPathCloseSubpath(myPath);
 
     dot.path = myPath;
@@ -147,10 +149,17 @@
 - (void)addSceneDescriptionLabel
 {
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    myLabel.text = NSLocalizedString(@"The dots mark the actual position of each sprite node.", @"");
+    myLabel.text = NSLocalizedString(@"The dots mark the actual position", @"");
     myLabel.fontSize = 18;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),100);
+    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),70);
     [self addChild:myLabel];
+    SKLabelNode *nextLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    nextLabel.text = NSLocalizedString(@"of each sprite node.", @"");
+    nextLabel.fontSize = 18;
+    nextLabel.position = CGPointMake(CGRectGetMidX(self.frame),50);
+    [self addChild:nextLabel];
+
+    
 }
 
 

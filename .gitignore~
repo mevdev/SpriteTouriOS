@@ -9,6 +9,14 @@
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+*/build/*
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+.idea/
+*.hmap
+*.xccheckout
 
 # Generated files
 *.o
@@ -22,3 +30,6 @@ build/
 
 # Backup files
 *~.nib
+
+#CocoaPods
+Pods

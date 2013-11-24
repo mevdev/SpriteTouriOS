@@ -1,6 +1,9 @@
 # Mac OS X
 *.DS_Store
 
+# Emacs
+*~
+
 # Xcode
 *.pbxuser
 *.mode1v3
