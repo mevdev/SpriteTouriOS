@@ -62,7 +62,6 @@
 		8055895818429DC700A9752B /* warrior_walk_0026.png in Resources */ = {isa = PBXBuildFile; fileRef = 8055893918429DC700A9752B /* warrior_walk_0026.png */; };
 		8055895918429DC700A9752B /* warrior_walk_0027.png in Resources */ = {isa = PBXBuildFile; fileRef = 8055893A18429DC700A9752B /* warrior_walk_0027.png */; };
 		8055895A18429DC700A9752B /* warrior_walk_0028.png in Resources */ = {isa = PBXBuildFile; fileRef = 8055893B18429DC700A9752B /* warrior_walk_0028.png */; };
-		8055895C1842A1E200A9752B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8055895B1842A1E200A9752B /* README.md */; };
 		8055895E1842A24100A9752B /* MIT-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8055895D1842A24100A9752B /* MIT-LICENSE.txt */; };
 		805589621842A83A00A9752B /* ColorizedAnimatingSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 805589611842A83A00A9752B /* ColorizedAnimatingSprite.m */; };
 /* End PBXBuildFile section */
@@ -146,7 +145,6 @@
 		8055893918429DC700A9752B /* warrior_walk_0026.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_walk_0026.png; sourceTree = "<group>"; };
 		8055893A18429DC700A9752B /* warrior_walk_0027.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_walk_0027.png; sourceTree = "<group>"; };
 		8055893B18429DC700A9752B /* warrior_walk_0028.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior_walk_0028.png; sourceTree = "<group>"; };
-		8055895B1842A1E200A9752B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8055895D1842A24100A9752B /* MIT-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MIT-LICENSE.txt"; sourceTree = "<group>"; };
 		805589601842A83A00A9752B /* ColorizedAnimatingSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorizedAnimatingSprite.h; sourceTree = "<group>"; };
 		805589611842A83A00A9752B /* ColorizedAnimatingSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorizedAnimatingSprite.m; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 				805588D018428E8100A9752B /* AppDelegate.h */,
 				805588D118428E8100A9752B /* AppDelegate.m */,
 				8055895D1842A24100A9752B /* MIT-LICENSE.txt */,
-				8055895B1842A1E200A9752B /* README.md */,
 			);
 			name = Delegate;
 			sourceTree = "<group>";
@@ -440,7 +437,6 @@
 				8055895018429DC700A9752B /* warrior_walk_0018.png in Resources */,
 				8055895118429DC700A9752B /* warrior_walk_0019.png in Resources */,
 				8055893C18429DC700A9752B /* rocket.png in Resources */,
-				8055895C1842A1E200A9752B /* README.md in Resources */,
 				805588D518428E8100A9752B /* Main_iPhone.storyboard in Resources */,
 				8055894A18429DC700A9752B /* warrior_walk_0012.png in Resources */,
 				8055895518429DC700A9752B /* warrior_walk_0023.png in Resources */,
@@ -698,6 +694,7 @@
 				805588FA18428E8100A9752B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		805588FB18428E8100A9752B /* Build configuration list for PBXNativeTarget "Sprite TourTests" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +703,7 @@
 				805588FD18428E8100A9752B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

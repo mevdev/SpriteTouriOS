@@ -106,10 +106,17 @@ static inline CGFloat myRand(CGFloat low, CGFloat high)
 - (void)addSceneDescriptionLabel
 {
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    myLabel.text = NSLocalizedString(@"These textured sprite nodes are combined using an additive blend.", @"");
+    myLabel.text = NSLocalizedString(@"These textured sprite nodes are", @"");
     myLabel.fontSize = 18;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),100);
+    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),120);
     [self addChild:myLabel];
+    
+    SKLabelNode *nextLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    nextLabel.text = NSLocalizedString(@"combined using an additive blend.", @"");
+    nextLabel.fontSize = 18;
+    nextLabel.position = CGPointMake(CGRectGetMidX(self.frame),100);
+    [self addChild:nextLabel];
+
 }
 
 

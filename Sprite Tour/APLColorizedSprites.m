@@ -98,7 +98,7 @@
         SKLabelNode *numberLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
         numberLabel.text = [NSString localizedStringWithFormat:@"%4.2f",(float)i/4.0];
         numberLabel.fontSize = 18;
-        numberLabel.position = CGPointMake(100 + i * (self.spriteTemplate.size.width + 12),CGRectGetMaxY(self.frame)-105);
+        numberLabel.position = CGPointMake(100 + i * (self.spriteTemplate.size.width + 18),CGRectGetMaxY(self.frame)-105);
         
         [self addChild:numberLabel];
     }
@@ -122,10 +122,11 @@
         [self addChild:s];
     }
     
+    
     // And a simple color node to show the actual blend color.
-    SKSpriteNode *colorSwash = [SKSpriteNode spriteNodeWithColor:color size:CGSizeMake(50,20)];
-    colorSwash.position = CGPointMake(100 * (self.spriteTemplate.size.width),
-                                      100 + row * (self.spriteTemplate.size.height)
+    SKSpriteNode *colorSwash = [SKSpriteNode spriteNodeWithColor:color size:CGSizeMake(20,90)];
+    colorSwash.position = CGPointMake(CGRectGetMidX(self.frame) * 1.80,
+                                      65 + row * (self.spriteTemplate.size.height)
                                       );
     
     [self addChild:colorSwash];
