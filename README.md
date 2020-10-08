@@ -5,7 +5,9 @@
 
 ## What is this?
 This is a version of the sample program 'Sprite Tour' for mac os x built for iphone and ipad.
+It was Apple sample code from WWDC 2013
 
+[https://developer.apple.com/download/more/?name=WWDC%202013](https://developer.apple.com/download/more/?name=WWDC%202013)
 
 ## This Sprite Kit example uses multiple scenes to demonstrate each of the different features of the SKSpriteNode class.
 
@@ -38,10 +40,10 @@ Shows how a sprite’s texture image can be animated.
 
 ## Contact
 
-[Robert](http://robertlinnemann.com)
+[Robert](robertlinnemann@gmail.com)
 
 ## License
 
-See [LICENSE](https://github.com/mevdev/SpriteTouriOS/blob/master/MIT-LICENSE.txt).
+See [MIT LICENSE](https://github.com/mevdev/SpriteTouriOS/blob/master/MIT-LICENSE.txt).
 Some Files Copyright (c) 2013 Apple Inc. All rights reserved.
 

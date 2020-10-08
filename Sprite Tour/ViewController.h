@@ -20,7 +20,7 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, assign) int indexSelected;
+@property (nonatomic, assign) long indexSelected;
 @property (weak) IBOutlet SKView *skView;
 
 @end

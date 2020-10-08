@@ -10,7 +10,7 @@
 
 @interface MenuViewController ()
 {
-    int menuIndex;
+    long menuIndex;
     NSString *menuTitle;
 }
 @end
